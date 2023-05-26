@@ -7,7 +7,6 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #define PORT 8080
-
 int main(int argc, char const* argv[])
 {
 	int server_fd, new_socket, valread;
@@ -54,12 +53,7 @@ int main(int argc, char const* argv[])
 		exit(EXIT_FAILURE);
 	}
 	valread = read(new_socket, buffer, 1024);
-	if(strcmp(buffer, "movevgr") == 0){
-		printf("%s\n", buffer);
-	}
-	else{
-		printf("random string");
-	}
+	printf("%s\n", buffer);
 	send(new_socket, hello, strlen(hello), 0);
 	printf("Hello message sent\n");
 
