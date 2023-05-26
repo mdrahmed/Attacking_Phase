@@ -14,4 +14,4 @@ Now, how it's done, compile the `example.c` in general way `gcc -o example examp
 * Now, use the shared libray to run the `example` executable, 
 	```LD_PRELOAD=./intercept.so ./example```
 
-
+**[Simply modifying the structs is not gonna work as there is a initialization process. To make that move, I will need to write the whole code like them and then call it.]**
