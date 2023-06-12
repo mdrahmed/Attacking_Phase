@@ -1,0 +1,106 @@
+
+Thu Jun  8 15:40:23 2023
+F1 Unix: 1686260423
+FFF Function: _ZN2ft26TxtHighBayWarehouseStorage5fetchENS_11TxtWPType_tE
+Thu Jun  8 15:40:23 2023
+TB Unix: 1686260423
+loaded values: 0
+Thu Jun  8 15:40:23 2023
+TB Unix: 1686260423
+loaded values: 0
+Thu Jun  8 15:40:23 2023
+TB Unix: 1686260423
+loaded values: 0
+Thu Jun  8 15:40:23 2023
+TB Unix: 1686260423
+loaded values: 0
+Thu Jun  8 15:40:23 2023
+TB Unix: 1686260423
+loaded values: 2138033688
+Thu Jun  8 15:40:23 2023
+FB Unix: 1686260423
+loaded values: 2
+Thu Jun  8 15:40:23 2023
+FB Unix: 1686260423
+loaded values: 1
+Thu Jun  8 15:40:23 2023
+FB Unix: 1686260423
+loaded values: 1
+Thu Jun  8 15:40:23 2023
+F1 Unix: 1686260423
+FFF Function: _ZN2ft26TxtHighBayWarehouseStorage10isValidPosENS_11StoragePos2E
+Thu Jun  8 15:40:23 2023
+CF Unix: 1686260423
+Called from: _ZN2ft26TxtHighBayWarehouseStorage5fetchENS_11TxtWPType_tE _ZN2ft26TxtHighBayWarehouseStorage10isValidPosENS_11StoragePos2E callInst_values: -1
+Thu Jun  8 15:40:23 2023
+TB Unix: 1686260423
+loaded values: 1
+Thu Jun  8 15:40:23 2023
+TB Unix: 1686260423
+loaded values: 1
+Thu Jun  8 15:40:23 2023
+TB Unix: 1686260423
+loaded values: 2138033688
+Thu Jun  8 15:40:23 2023
+FB Unix: 1686260423
+loaded values: 2137846124
+Thu Jun  8 15:40:23 2023
+FB Unix: 1686260423
+loaded values: 2136834604
+Thu Jun  8 15:40:52 2023
+F1 Unix: 1686260452
+FFF Function: _ZN2ft12TxtWorkpieceD0Ev
+Thu Jun  8 15:40:52 2023
+F1 Unix: 1686260452
+FFF Function: _ZN2ft12TxtWorkpieceD2Ev
+Thu Jun  8 15:40:23 2023
+TB Unix: 1686260423
+loaded values: 1
+Thu Jun  8 15:40:23 2023
+TB Unix: 1686260423
+loaded values: 1
+Thu Jun  8 15:40:23 2023
+TB Unix: 1686260423
+loaded values: 2137848136
+Thu Jun  8 15:40:23 2023
+TB Unix: 1686260423
+loaded values: 2137198012
+Thu Jun  8 15:40:29 2023
+F1 Unix: 1686260429
+FFF Function: _ZN2ft15SubjectObserver6NotifyEv
+Thu Jun  8 15:40:29 2023
+F1 Unix: 1686260429
+FFF Function: _ZNKSt6vectorIPN2ft8ObserverESaIS2_EE4sizeEv
+
+Thu Jun  8 15:39:57 2023
+CF Unix: 1686260397
+Called from: _ZN2ft19TxtHighBayWarehouse5fetchENS_11TxtWPType_tE _ZN2ft26TxtHighBayWarehouseStorage5fetchENS_11TxtWPType_tE callInst_values: -1
+Thu Jun  8 15:39:57 2023
+F1 Unix: 1686260397
+FFF Function: _ZN2ft26TxtHighBayWarehouseStorage15getNextFetchPosEv
+Thu Jun  8 15:39:57 2023
+TB Unix: 1686260397
+loaded values: 1
+Thu Jun  8 15:39:57 2023
+TB Unix: 1686260397
+loaded values: 1
+Thu Jun  8 15:39:57 2023
+F1 Unix: 1686260397
+FFF Function: _ZN2ft19TxtHighBayWarehouse5getCREii
+Thu Jun  8 15:39:57 2023
+F1 Unix: 1686260397
+FFF Function: _ZN2ft19TxtHighBayWarehouse6moveCREii
+Thu Jun  8 15:39:57 2023
+F1 Unix: 1686260397
+FFF Function: _ZN2ft14TxtAxisNSwitch6moveS1Ev
+Thu Jun  8 15:39:36 2023
+F1 Unix: 1686260376
+FFF Function: _ZN2ft14TxtAxisNSwitch7moveS2XEi
+Thu Jun  8 15:39:36 2023
+F1 Unix: 1686260376
+FFF Function: _ZN2ft14TxtAxisNSwitch10isS2XValidEi
+Thu Jun  8 15:39:36 2023
+F1 Unix: 1686260376
+FFF Function: _ZNKSt6vectorIhSaIhEE4sizeEv
+Thu Jun  8 15:39:36 2023
+CF Unix: 1686260376
