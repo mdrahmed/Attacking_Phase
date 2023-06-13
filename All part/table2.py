@@ -15,6 +15,14 @@ def print_storage(array):
             print(array[i][j], end=" ")
         print()
 
+def print_values(loaded_values):
+    for i in range(len(loaded_values)):
+        print(loaded_values[i], end=" ")
+        if((i+1)%3 == 0):
+           print()
+    if((i+1)%3 !=0):
+        print()
+
 # Main program
 print("Enter elements for a 3x3 HBW storage:")
 array = take_input()
@@ -51,12 +59,12 @@ def update_storage(updated_values, wp):
             count += 1
         if panic or update:
             break
+    print("Updated storage:")
+    print_storage(array)
     if wp == 0 and not panic:
         print("Removed workpiece from this position i,j:",i,j)
     elif wp == 1 and not panic:
         print("Stored workpiece at this position i,j:", i,j)
-    print("\nUpdated storage:")
-    print_storage(array)
  
 def extract_loaded_values_2nd_part(file_content):
     loaded_values = []
@@ -78,34 +86,46 @@ def extract_loaded_values_2nd_part(file_content):
             store = True
             remove = False
 
-        if "loaded values" in line and (remove or store) and total_load <= 9:
+        if "loaded values" in line and (remove or store):
             loaded_value = line.split()[-1] 
-            #print(line)            
-            if loaded_value != "-1":
-                loaded_values.append(loaded_value)
-                total_load += 1
-            if int(loaded_value) == 0 and store:
-                found_nextPosition = True
-                store = False
-            #print(total_load)
+            loaded_values.append(loaded_value)
+            ##print(line)            
+            #if loaded_value != "-1":
+            #    loaded_values.append(loaded_value)
+            #    total_load += 1
+            #if int(loaded_value) == 0 and store:
+            #    found_nextPosition = True
+            #    store = False
+            ##print(total_load)
         
-        if "TxtHighBayWarehouseStorage10isValidPosENS_11StoragePos" in line and (remove or store or found_nextPosition):
+        if "TxtHighBayWarehouseStorage10isValidPosENS_11StoragePos" in line and (remove or store):
             print()
-            print("Values loaded: ")
-            for i in range(len(loaded_values)):
-                print(loaded_values[i], end=" ")
-                if((i+1)%3 == 0):
-                    print()
-            print()
+            print("Loaded values:",loaded_values)
             print("At this unix time: ", time.split()[-1])
             if remove:
-                print("Removing wp ...")
+                pos1 = loaded_values[-2]
+                pos2 = loaded_values[-1]
+                loaded_values = loaded_values[:-2] ## removed the last 2 values of position
+                #loaded_values = loaded_values[1::2] ## sliced the list starting from index 1 with a step of size 2, as there is 2 conditions
+                loaded_values = [value for value in loaded_values if value in ['0', '1', '2', '3']]
+                print("types loaded: ")
+                print_values(loaded_values)
+                print("Removing wp from this postion: ",pos1,pos2)
                 update_storage(loaded_values, 0)
             elif store or found_nextPosition:
-                print("Storing wp ..")
+                pos1 = loaded_values[-2]
+                pos2 = loaded_values[-1]
+                loaded_values = loaded_values[:-2] ## removed the last 2 values of position
+                print("Storing wp at this position: ", pos1, pos2)
                 update_storage(loaded_values, 1)
 
-            print("Total loaded:",total_load)
+            #print("Values loaded: ")
+            #for i in range(len(loaded_values)):
+            #    print(loaded_values[i], end=" ")
+            #    if((i+1)%3 == 0):
+            #        print()
+            #print("At this unix time: ", time.split()[-1])
+            #print("Total loaded:",total_load)
             loaded_values = []
             total_load = 0
             store = False
@@ -124,8 +144,10 @@ def process_file(file_name):
 ## 2nd part
 #storage = process_file("checking_positions.txt")
 #storage = process_file("test.txt")
-#storage = process_file("t9")
-storage = process_file("hbw-mfetch.txt")
+#storage = process_file("t2.txt")
+#storage = process_file("hbw-mfetch.txt")
+#storage = process_file("hbw-mstore.txt")
+storage = process_file("../../5.multi-fetch-storage/4.Combined/combined.txt")
 
 ## 1st part
 #stored = process_file("test1p.txt")
