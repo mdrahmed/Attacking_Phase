@@ -54,12 +54,29 @@ int main(int argc, char const* argv[])
 		exit(EXIT_FAILURE);
 	}
 	valread = read(new_socket, buffer, 1024);
-	if(strcmp(buffer, "movevgr") == 0){
-		printf("%s\n", buffer);
+	
+	if(strstr(buffer, "vgr") != NULL){
+		printf("\'vgr\' is present: %s\n", buffer);
 	}
-	else{
-		printf("random string");
-	}
+        else if(strstr(buffer, "order")){
+                printf("Order requested: %s\n", buffer);
+                if(strstr(buffer, "blue")){
+                        printf("It's blue\n");
+                }
+                else if(strstr(buffer, "white")){
+                        printf("It's white\n");
+                        //requestOrder(WP_TYPE_WHITE);
+                }
+                else if(strstr(buffer, "red")){
+                        printf("It's red\n");
+                        //requestOrder(WP_TYPE_RED);
+                }
+        }
+        else{
+            printf("random string");
+        }
+
+
 	send(new_socket, hello, strlen(hello), 0);
 	printf("Hello message sent\n");
 

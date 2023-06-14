@@ -13,11 +13,38 @@ int main(int argc, char const* argv[])
 	struct sockaddr_in serv_addr;
 	//char* hello = "Hello from client";
 	char hello[1024] = "movevgr";
+	printf("Enter command: ");
+	fgets(hello, sizeof(hello), stdin);
+	printf("Your input: %s\n",hello);
+
 	char buffer[1024] = { 0 };
 	if ((client_fd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
 		printf("\n Socket creation error \n");
 		return -1;
 	}
+	/*
+	if(strstr(hello, "vgr") != NULL){
+		printf("Correct string: %s\n", buffer);
+		//is_din_value = 0;
+	}
+	else if(strstr(hello, "order")){
+	        printf("Order requested: %s\n", hello);
+		if(strstr(hello, "blue")){
+			printf("It's blue\n");
+		}
+		else if(strstr(hello, "white")){
+			printf("It's white\n");
+			//requestOrder(WP_TYPE_WHITE);
+		}
+		else if(strstr(hello, "red")){
+			printf("It's red\n");
+			//requestOrder(WP_TYPE_RED);
+		}
+	}
+	else{
+	    printf("random string");
+	}
+	*/
 
 	serv_addr.sin_family = AF_INET;
 	serv_addr.sin_port = htons(PORT);
