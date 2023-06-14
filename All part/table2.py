@@ -77,11 +77,14 @@ def extract_loaded_values_2nd_part(file_content):
     for i in range(len(file_content)):
         line = file_content[i]
         if "TxtHighBayWarehouseStorage5fetch" in line and "Function" in line:
-            #print(file_content[i-1])
+            print()
+            print("Ordered function found: ", line.split()[-1])
             time = file_content[i-1]
             remove = True
             store = False
         if "TxtHighBayWarehouseStorage14fetchContainer" in line and "Function" in line:
+            print()
+            print("Storing function found: ", line.split()[-1])
             time = file_content[i-1]
             store = True
             remove = False
@@ -99,13 +102,17 @@ def extract_loaded_values_2nd_part(file_content):
             ##print(total_load)
         
         if "TxtHighBayWarehouseStorage10isValidPosENS_11StoragePos" in line and (remove or store):
-            print()
             print("Loaded values:",loaded_values)
             print("At this unix time: ", time.split()[-1])
-            if remove:
-                pos1 = loaded_values[-2]
-                pos2 = loaded_values[-1]
-                loaded_values = loaded_values[:-2] ## removed the last 2 values of position
+            pos1 = loaded_values[-2]
+            pos2 = loaded_values[-1]
+            loaded_values = loaded_values[:-2] ## removed the last 2 values of position
+            if pos1 == '-1' or pos2 == '-1':
+                print("No space left on device.\nPos1,pos2:",pos1,pos2)
+            elif remove:
+                #pos1 = loaded_values[-2]
+                #pos2 = loaded_values[-1]
+                #loaded_values = loaded_values[:-2] ## removed the last 2 values of position
                 #loaded_values = loaded_values[1::2] ## sliced the list starting from index 1 with a step of size 2, as there is 2 conditions
                 loaded_values = [value for value in loaded_values if value in ['0', '1', '2', '3']]
                 print("types loaded: ")
@@ -113,9 +120,9 @@ def extract_loaded_values_2nd_part(file_content):
                 print("Removing wp from this postion: ",pos1,pos2)
                 update_storage(loaded_values, 0)
             elif store or found_nextPosition:
-                pos1 = loaded_values[-2]
-                pos2 = loaded_values[-1]
-                loaded_values = loaded_values[:-2] ## removed the last 2 values of position
+                #pos1 = loaded_values[-2]
+                #pos2 = loaded_values[-1]
+                #loaded_values = loaded_values[:-2] ## removed the last 2 values of position
                 print("Storing wp at this position: ", pos1, pos2)
                 update_storage(loaded_values, 1)
 
@@ -143,11 +150,11 @@ def process_file(file_name):
 
 ## 2nd part
 #storage = process_file("checking_positions.txt")
-#storage = process_file("test.txt")
+storage = process_file("test-combined.txt")
 #storage = process_file("t2.txt")
 #storage = process_file("hbw-mfetch.txt")
 #storage = process_file("hbw-mstore.txt")
-storage = process_file("../../5.multi-fetch-storage/4.Combined/combined.txt")
+#storage = process_file("../../5.multi-fetch-storage/4.Combined/combined.txt")
 
 ## 1st part
 #stored = process_file("test1p.txt")
