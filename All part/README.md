@@ -1,6 +1,9 @@
+### Python program
+`table2.py` is the python program which is generating the table. To test the program give the valid input, which should be given after analyzing the `test-combined.txt` file. As this one contains the ocmbination of both storing and removal of the `hbw` storage.
+
+### General ideas
 I need to test this program with the log by storing 1 value at a time and then removing 1 value at a time. In following,
 ```
-
 F1 Unix: 1686260423
 FFF Function: _ZN2ft26TxtHighBayWarehouseStorage5fetchENS_11TxtWPType_tE
 Thu Jun  8 15:40:23 2023
