@@ -7,7 +7,7 @@
 
 const std::string SERVER_ADDRESS("tcp://localhost:1883");
 const std::string CLIENT_ID("mqtt_cpp_async_publisher");
-const std::string TOPIC("my/topic");
+const std::string TOPIC("fl/vgr/do");
 
 class callback : public virtual mqtt::callback
 {
@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
         client.connect(connOpts)->wait();
         std::cout << "OK\n" << std::endl;
 
-        std::string payload = "Hello, MQTT!";
+        std::string payload = "BLUE";
         mqtt::message_ptr pubmsg = mqtt::make_message(TOPIC, payload);
 	//std::cout << "Topic: " << pubmsg->get_topic() << std::endl;
         pubmsg->set_qos(0);
